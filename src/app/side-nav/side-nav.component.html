@@ -1,0 +1,205 @@
+<div class="home-version-4" data-style="default">
+
+  <div id="main_content">
+
+    <header class="site-header header-style-five header-absolute intro-element">
+      <div class="header-top-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-2 col-sm-8">
+              <div class="site-branding text-center">
+                <a href="#" style="margin-top:20px;">
+                  <!-- <img src="../../assets/images/Newfolder/newlogo.png" alt="Site Logo" /> -->
+                  <img src="../../assets/images/Newfolder/logo1.png" alt="Site Logo" />
+                </a>
+              </div><!-- /.site-branding -->
+            </div>
+            <div class="col-lg-5">
+              <div class="site-navigation">
+                <div class="site-navigation-inner">
+                  <nav class="navigation">
+                    <div class="menu-wrapper">
+                      <div class="menu-content">
+                        <ul class="mainmenu">
+                          <li><a style="font-size: 25px;" (click)="home()">Home</a></li>
+                          <li><a style="font-size: 25px;" (click)="servicesClick()">Services</a></li>
+                          <li><a style="font-size: 25px;" (click)="aboutUsClick()">About Us</a></li>
+                          <!-- <li><a (click)="profilesClick()">Profiles</a></li> -->
+                       </ul>  <!--  /.menu-list -->
+                      </div> <!-- /.hours-content-->
+
+                    </div><!-- /.menu-wrapper -->
+                  </nav>
+                </div>
+              </div><!-- /.site-navigation -->
+
+
+            </div>
+            <div class="col-lg-5 col-sm-4">
+              <div class="header-right-area">
+                <div class="contact-page">
+                  <a *ngIf="this.loginModel.id == 0" class="btn btn-default btn-primary btn-white" (click)="loginClick()"
+                    style="background-color: #ed1c24 !important;">Login </a>&nbsp;&nbsp;&nbsp;
+                  <a *ngIf="this.loginModel.id == 0" class="btn btn-default btn-primary btn-white" (click)="registerClick()">Register</a>
+                </div>
+
+                <div  *ngIf="this.loginModel.id > 0">
+                    <button type="button" (click)="openPaymentGateway()" title="Select your package here"
+                          style="background-color: transparent;border: none;font-size: 25px;">
+                          <i style="color: #fff;" class="fa fa-dollar-sign"></i>
+                     </button>
+
+                    <button autocomplete="off" type="button" title="See your Notifications here" data-target="#notifications" id="btnnotifications"  data-toggle="modal"
+                            data-role="popup" data-backdrop="static" data-keyboard="false"
+                            style="background-color: transparent;border: none;font-size: 25px;">
+                            <b> <i style="color: #fff;" class="fa fa-bell"></i> </b>
+                    </button>
+
+                    <button type="button" (click)="openChat()" title="See your Messages here"
+                            style="background-color: transparent;border: none;font-size: 25px;margin-right: 12px;">
+                      <i style="color: #fff;" class="fa fa-comment"></i>
+                    </button>
+
+                  <div class="dropdown">
+                    <button class="dropbtn nav-btn" style="border-style:groove;">
+                      <i aria-hidden="true" class="fa fa-user" style="font-size: 25px;width: 40px;"></i>
+                      {{loginModel.name}}</button>
+                    <div class="dropdown-content">
+                      <a (click)="editProfileClick(loginModel)"><i class="fa fa-user"></i>   Edit Profile </a>
+                      <a (click)="logoutClick()"><i class="fas fa-sign-out-alt"></i>   logout </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hamburger-menus">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.header-top-area -->
+
+      <div class="mobile-sidebar-menu sidebar-menu">
+        <div class="overlaybg"></div>
+      </div>
+    </header>
+
+
+    <div aria-labelledby="makeTitle" aria-modal="true" class="modal fade" id="notifications" role="dialog"
+			  tabindex="-1">
+			  <div class="modal-dialog" role="document" style="max-width: 20%;margin-top: 5%;margin-right:10%;">
+
+				<div class="modal-content popup" id="tab1" style="background-color: white;border-radius: 15px;">
+
+				  <button aria-label="Close" class="close" id="btnnotificationsClose" (click)="close()" type="button">
+					<span aria-hidden="true"
+					  style="float: right;color: #000;font-size: 140%;margin-right: 10px;margin-top: 5px;">×</span>
+				  </button>
+
+				  <br>
+				  <div style="text-align: center;margin-bottom: 10px;">
+					<h2> Alerts</h2>
+				  </div>
+				  <div style="margin-left: 20px; justify-content: left;">
+            <img src="assets/images/search/avatar.png" alt="Avatar" class="avatar"> &nbsp; &nbsp; &nbsp; &nbsp;
+              Sam Sent you a Message
+          </div> <br>
+
+          <div style="margin-left: 20px; justify-content: left;">
+            <img src="assets/images/search/img_avatar.png" alt="Avatar" class="avatar"> &nbsp; &nbsp; &nbsp; &nbsp;
+            John Sent you a Message
+          </div> <br>
+
+          <div style="align-self: center;">
+            <button class="viewallalerts" (click)="alerts()"> View all Alerts</button>
+          </div>
+
+				</div>
+			  </div>
+			</div>
+
+
+
+    <!-- <div id="sticky-header"></div> -->   <!-- Comment this to hide black header that was coming un-necessarily -->
+    <router-outlet></router-outlet>
+    <footer class="site-footer footer-style-one">
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Start Footer Widget Area
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <div class="footer-widget-area ptb-100 bg-image bg-overlay bg-parallax1">
+        <div class="container ml-b-60 ml-t-5">
+          <div class="row mx-md-n5">
+            <!--~~~~~ Start Widget Location Footer ~~~~~-->
+
+            <!--~./ end location widget ~-->
+
+            <!--~~~~~ Start Widget Business Hours Footer ~~~~~-->
+            <div class="col-lg-4 px-md-5">
+              <aside class="widget widget-business-hours">
+                <h2 class="widget-title">ABOUT US</h2>
+                <P>
+                  Created for the home office, The Cloud Print is ready to help you make some design magic.
+                  We provide Affordable, desired-quantity, high- quality service for our clients.
+                </P>
+              </aside>
+            </div>
+            <!--~./ end business hours widget ~-->
+            <div class="col-lg-4 px-md-5">
+              <aside class="widget bt-location-widget">
+                <h2 class="widget-title">ADDRESS</h2>
+                <div class="widget-content">
+                  <ul class="list">
+                    <li><span>Office: </span> Mumbai
+                    </li>
+                    <li><span>Call : </span> +1 - 123-456-789 - </li>
+                    <li><span>E-mail: </span> <a href="mailto:#">information@support.com</a>
+                    </li>
+                  </ul>
+                  <div class="social-status">
+                    <a href="#0"><span class="fab fa-facebook-f"></span></a>
+                    <a href="#0"><span class="fab fa-twitter"></span></a>
+                    <a href="#0"><span class="fab fa-google-plus-g"></span></a>
+                    <!-- <a href="#0"><span class="fab fa-behance"></span></a> -->
+                  </div>
+                </div>
+              </aside>
+            </div>
+            <!--~~~~~ Start Widget Instafeed ~~~~~-->
+            <div class="col-lg-4 px-md-5">
+              <aside class="widget bt-instafeed-widget">
+                <h2 class="widget-title"> OUR LOCATION </h2>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32660626.899025753!2d5.2010515289560475!3d2.1942159724685384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10a06c0a948cf5d5%3A0x108270c99e90f0b3!2sIndia!5e0!3m2!1sen!2sin!4v1647434538666!5m2!1sen!2sin"
+                  width="100%" height="170" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </aside>
+            </div>
+            <!--~./ end instafeed widget ~-->
+          </div>
+        </div>
+      </div>
+      <!--~./ end footer widgets area ~-->
+
+      <div class="footer-bottom-area ptb-100 bg-image"
+        style="background-image:url('assets/images/bg/bg-pattent1.jpg'); padding: 0 0px;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="footer-bottom-text">
+                <div class="copyright-text">
+                  <p>© 2022 - Cloud Print- All Right Reserved</p>
+                  
+                  Abel Technologies & consultancy
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
