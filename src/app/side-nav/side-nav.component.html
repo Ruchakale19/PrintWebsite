@@ -21,9 +21,9 @@
                     <div class="menu-wrapper">
                       <div class="menu-content">
                         <ul class="mainmenu">
-                          <li><a style="font-size: 25px;" (click)="home()">Home</a></li>
-                          <li><a style="font-size: 25px;" (click)="servicesClick()">Services</a></li>
-                          <li><a style="font-size: 25px;" (click)="aboutUsClick()">About Us</a></li>
+                          <li><a style="font-size: 22px;" (click)="home()">Home</a></li>
+                          <li><a style="font-size: 22px;" (click)="servicesClick()">Services</a></li>
+                          <li><a style="font-size: 22px;" (click)="aboutUsClick()">About Us</a></li>
                           <!-- <li><a (click)="profilesClick()">Profiles</a></li> -->
                        </ul>  <!--  /.menu-list -->
                       </div> <!-- /.hours-content-->
@@ -38,9 +38,16 @@
             <div class="col-lg-5 col-sm-4">
               <div class="header-right-area">
                 <div class="contact-page">
+
+
                   <a *ngIf="this.loginModel.id == 0" class="btn btn-default btn-primary btn-white" (click)="loginClick()"
                     style="background-color: #ed1c24 !important;">Login </a>&nbsp;&nbsp;&nbsp;
-                  <a *ngIf="this.loginModel.id == 0" class="btn btn-default btn-primary btn-white" (click)="registerClick()">Register</a>
+
+                    
+                  <a *ngIf="this.loginModel.id == 0" class="btn btn-default btn-primary btn-white" (click)="registerClick()"
+                  >Register</a>
+
+
                 </div>
 
                 <div  *ngIf="this.loginModel.id > 0">

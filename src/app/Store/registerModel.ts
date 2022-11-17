@@ -12,6 +12,6 @@ export class RegisterModel {
     public location: string = '';
 
   
-    public viewName = 'SignupWizard';
+    public viewName = 'Register';
   }
   
