@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       this.store.dispatch(new pageStore.OpenPage(Object.assign({ }, this.loginModel)));
       debugger;
       if(this.loginModel.id > 0) {
-        this.router.navigateByUrl('addclientprofile');
+        // this.router.navigateByUrl('addclientprofile');
       }
     }
 
