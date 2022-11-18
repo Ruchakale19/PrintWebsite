@@ -14,6 +14,10 @@ import { CommonModule } from '@angular/common';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { StoreModule } from '@ngrx/store';
 import { Pagereducer } from './Store/PageStore/Page.Reducer';
+import { AddClientProfileComponent } from './add-client-profile/add-client-profile.component';
+import { AddShopProfileComponent } from './add-shop-profile/add-shop-profile.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function localStorageSyncReducer(rootReducer: any) {
   return localStorageSync({
@@ -31,7 +35,9 @@ export function localStorageSyncReducer(rootReducer: any) {
     RegisterComponent,
     HeaderComponent,
     SideNavComponent,
-    HomeComponent
+    HomeComponent,
+    AddClientProfileComponent,
+    AddShopProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +49,14 @@ export function localStorageSyncReducer(rootReducer: any) {
       { PrintWebsite: Pagereducer },
       { metaReducers: [localStorageSyncReducer],}
     ),
+
+    StoreModule.forRoot({}, {}),
+     ServiceWorkerModule.register('ngsw-worker.js', {
+       enabled: environment.production,
+       // Register the ServiceWorker as soon as the application is stable
+       // or after 30 seconds (whichever comes first).
+       registrationStrategy: 'registerWhenStable:30000'
+     }),
     
   ],
   providers: [],

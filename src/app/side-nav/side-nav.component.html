@@ -90,49 +90,18 @@
       </div>
       <!-- /.header-top-area -->
 
-      <div class="mobile-sidebar-menu sidebar-menu">
-        <div class="overlaybg"></div>
-      </div>
+      
     </header>
 
 
-    <div aria-labelledby="makeTitle" aria-modal="true" class="modal fade" id="notifications" role="dialog"
-			  tabindex="-1">
-			  <div class="modal-dialog" role="document" style="max-width: 20%;margin-top: 5%;margin-right:10%;">
-
-				<div class="modal-content popup" id="tab1" style="background-color: white;border-radius: 15px;">
-
-				  <button aria-label="Close" class="close" id="btnnotificationsClose" (click)="close()" type="button">
-					<span aria-hidden="true"
-					  style="float: right;color: #000;font-size: 140%;margin-right: 10px;margin-top: 5px;">×</span>
-				  </button>
-
-				  <br>
-				  <div style="text-align: center;margin-bottom: 10px;">
-					<h2> Alerts</h2>
-				  </div>
-				  <div style="margin-left: 20px; justify-content: left;">
-            <img src="assets/images/search/avatar.png" alt="Avatar" class="avatar"> &nbsp; &nbsp; &nbsp; &nbsp;
-              Sam Sent you a Message
-          </div> <br>
-
-          <div style="margin-left: 20px; justify-content: left;">
-            <img src="assets/images/search/img_avatar.png" alt="Avatar" class="avatar"> &nbsp; &nbsp; &nbsp; &nbsp;
-            John Sent you a Message
-          </div> <br>
-
-          <div style="align-self: center;">
-            <button class="viewallalerts" (click)="alerts()"> View all Alerts</button>
-          </div>
-
-				</div>
-			  </div>
-			</div>
+  
 
 
 
     <!-- <div id="sticky-header"></div> -->   <!-- Comment this to hide black header that was coming un-necessarily -->
     <router-outlet></router-outlet>
+
+    
     <footer class="site-footer footer-style-one">
       <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
          Start Footer Widget Area
