@@ -16,6 +16,8 @@ export class SideNavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    debugger;
+    // this.loginModel = new LoginModel();
   }
 
   home() {

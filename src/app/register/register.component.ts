@@ -16,7 +16,9 @@ export class RegisterComponent implements OnInit {
     this.registerModel = new RegisterModel();
   }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+    debugger;
+   }
 
   regClick() {
     this.router.navigateByUrl('/register');

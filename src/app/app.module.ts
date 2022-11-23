@@ -18,6 +18,7 @@ import { AddClientProfileComponent } from './add-client-profile/add-client-profi
 import { AddShopProfileComponent } from './add-shop-profile/add-shop-profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 export function localStorageSyncReducer(rootReducer: any) {
   return localStorageSync({
@@ -44,6 +45,7 @@ export function localStorageSyncReducer(rootReducer: any) {
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    HttpClientModule,
 
     StoreModule.forRoot(
       { PrintWebsite: Pagereducer },

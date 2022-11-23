@@ -1,3 +1,5 @@
+/* eslint-disable @ngrx/no-typed-global-store */
+/* eslint-disable @ngrx/prefer-action-creator-in-dispatch */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginModel } from '../Store/LoginModel';
@@ -40,10 +42,10 @@ export class LoginComponent implements OnInit {
 
       debugger;
 
-      this.store.dispatch(new pageStore.OpenPage(Object.assign({ }, this.loginModel)));
+      
       debugger;
       if(this.loginModel.id > 0) {
-        // this.router.navigateByUrl('addclientprofile');
+        this.router.navigateByUrl('addshopprofile');
       }
     }
 

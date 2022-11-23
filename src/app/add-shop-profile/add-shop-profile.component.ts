@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApicallingService } from '../apicalling.service';
 
 @Component({
   selector: 'app-add-shop-profile',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddShopProfileComponent implements OnInit {
 
-  constructor() { }
+  result:any = [];
+
+  constructor(private apiCallingService: ApicallingService) {debugger; }
 
   ngOnInit(): void {
+    debugger;
+    this.getPaperMaster();
+  }
+
+  getPaperMaster() {
+    debugger;
+    this.apiCallingService.getPaperMaster().subscribe((res) => {
+      debugger;
+      this.result = res;
+      debugger;
+    });
+    debugger;
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { ApicallingService } from '../apicalling.service';
 import { LoginModel } from '../Store/LoginModel';
 
 @Component({
@@ -10,24 +11,29 @@ import { LoginModel } from '../Store/LoginModel';
 export class AddClientProfileComponent implements OnInit {
 
   loginModel: LoginModel;
+  result: any = [];
 
-  constructor(private store: Store) { 
+  constructor(private store: Store, private apiCallingService: ApicallingService) { 
     this.loginModel = new LoginModel();
   }
 
   ngOnInit(): void {
     debugger;
-    var loginUser = this.store.source['value']['PrintWebsite'].filter(
-      (x) => {
-        return x.viewName == 'Login';
-      }
-    );
-
-    debugger
-    if(loginUser[0].id > 0) {
-      this.loginModel = Object.assign({}, loginUser[0]);
-    }
+    // this.loginModel = new LoginModel();
+    this.getPaperMaster();
+    
   }
+
+  getPaperMaster() {
+    debugger;
+    this.apiCallingService.getPaperMaster().subscribe((res) => {
+      debugger;
+      this.result = res;
+      debugger;
+    });
+    debugger;
+  }
+  
 
   home() { }
 
